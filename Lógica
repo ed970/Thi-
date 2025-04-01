@@ -1,0 +1,43 @@
+// script.js
+let currentStep = 0;
+
+const questions = [
+    {
+        question: "Qual é o seu nome?",
+        correctAnswer: "Thiago",
+    },
+    {
+        question: "Qual é o seu filme favorito?",
+        correctAnswer: "Jogos Vorazes",
+    },
+    {
+        question: "Qual a cor do céu?",
+        correctAnswer: "Azul",
+    }
+];
+
+function loadQuestion() {
+    const questionElement = document.getElementById('question');
+    if (currentStep < questions.length) {
+        questionElement.textContent = questions[currentStep].question;
+    } else {
+        showFinalArea();
+    }
+}
+
+function answerQuestion(answer) {
+    const currentQuestion = questions[currentStep];
+    if (answer === currentQuestion.correctAnswer) {
+        currentStep++;
+        loadQuestion();
+    } else {
+        alert("Resposta incorreta! Tente novamente.");
+    }
+}
+
+function showFinalArea() {
+    document.getElementById('game-area').classList.add('hidden');
+    document.getElementById('final-area').classList.remove('hidden');
+}
+
+window.onload = loadQuestion;
