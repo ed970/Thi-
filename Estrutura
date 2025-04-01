@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Interativo - A Jornada ao Tesouro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Jogo Interativo!</h1>
+        <div id="game-area">
+            <h2 id="question">Qual é o seu nome?</h2>
+            <div class="buttons">
+                <button onclick="answerQuestion('João')">João</button>
+                <button onclick="answerQuestion('Carlos')">Carlos</button>
+                <button onclick="answerQuestion('Lucas')">Lucas</button>
+            </div>
+        </div>
+
+        <div id="final-area" class="hidden">
+            <h2>Parabéns! Você completou a jornada!</h2>
+            <img src="treasure.jpg" alt="Tesouro" id="treasure-img">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
